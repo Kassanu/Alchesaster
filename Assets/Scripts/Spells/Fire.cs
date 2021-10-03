@@ -37,7 +37,6 @@ public class Fire : Spell
     {
         if (this.casted) {
             if (col.gameObject.tag != "Player" && col.gameObject.tag != "PlayerExit") {
-                Debug.Log(col.gameObject.name + " : " + gameObject.name + " : " + Time.time);
                 Explosion explosion = Instantiate(this.explosionPrefab, this.gameObject.transform.position, Quaternion.identity);
                 explosion.transform.parent = this.spellContainer.transform;
                 explosion.damage = 10;

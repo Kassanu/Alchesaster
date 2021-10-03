@@ -12,6 +12,8 @@ TagManager:
   - Room
   - Spells
   - Bullet
+  - Boss
+  - BossHead
   layers:
   - Default
   - TransparentFX

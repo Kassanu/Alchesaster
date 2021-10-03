@@ -26,6 +26,10 @@ public class AcidGroundEffect : MonoBehaviour
                     Entity entity = collider.gameObject.GetComponent<Entity>();
                     entity.damage(this.damage);
                 }
+                if (collider.gameObject.tag == "BossHead") {
+                    Entity entity = GameObject.FindWithTag("Boss").GetComponent<Entity>();
+                    entity.damage(this.damage);
+                }
             }
             this.nextTick = Time.time + this.tick;
         }

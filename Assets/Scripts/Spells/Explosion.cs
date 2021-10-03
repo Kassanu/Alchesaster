@@ -15,6 +15,10 @@ public class Explosion : MonoBehaviour
                 Entity entity = collider.gameObject.GetComponent<Entity>();
                 entity.damage(this.damage);
             }
+            if (collider.gameObject.tag == "BossHead") {
+                Entity entity = GameObject.FindWithTag("Boss").GetComponent<Entity>();
+                entity.damage(this.damage);
+            }
         }
         Destroy(this.gameObject, .5f);
     }

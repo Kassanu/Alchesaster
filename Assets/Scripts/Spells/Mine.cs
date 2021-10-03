@@ -49,7 +49,6 @@ public class Mine : Spell
     void OnTriggerEnter2D(Collider2D col)
     {
         if (this.casted) {
-            Debug.Log(col.gameObject.name + " : " + gameObject.name + " : " + Time.time);
             if (this.armed && col.gameObject.tag != "Player" && col.gameObject.tag != "PlayerExit") {
                 Explosion explosion = Instantiate(this.explosionPrefab, this.gameObject.transform.position, Quaternion.identity);
                 explosion.damage = this.damage;

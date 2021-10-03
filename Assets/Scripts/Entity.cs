@@ -47,13 +47,13 @@ public class Entity : MonoBehaviour
         this.Move();
     }
 
-    protected void Move()
+    protected virtual void Move()
     {
         this.movement = this.movement.normalized;
 		this.rigidBody2d.velocity = Vector3.SmoothDamp(this.rigidBody2d.velocity, this.movement * this.getSpeed() * Time.fixedDeltaTime, ref this.zero, .05f);
     }
 
-    protected void Stop()
+    protected virtual void Stop()
     {
         this.movement = this.movement.normalized;
 		this.rigidBody2d.velocity = Vector2.zero;

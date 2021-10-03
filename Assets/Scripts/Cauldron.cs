@@ -14,13 +14,11 @@ public class Cauldron : MonoBehaviour
     public void addColor(BottleColor color)
     {
         if (this.bottles.Count == 2) {
-            Debug.Log("Cauldron overflow explode");
             Explosion explosion = Instantiate(this.explosionPrefab, this.player.gameObject.transform.position, Quaternion.identity);
             explosion.damage = 10;
             explosion.init();
             this.resetCauldron();
         } else {
-            Debug.Log("Adding: " + color);
             this.bottles.Add(color);
             this.fill.SetActive(true);
             this.fill.GetComponent<Image>().color = this.cauldronColor();

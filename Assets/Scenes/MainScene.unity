@@ -2092,6 +2092,7 @@ MonoBehaviour:
   tutorialRooms:
   - {fileID: 3871395411211202841, guid: 0e03b4ba78202e542a60f3dc4aa6f0b9, type: 3}
   - {fileID: 3871395411211202841, guid: 5e8093fd14e8b5946935fdb38863d652, type: 3}
+  bossRoom: {fileID: 3871395411211202841, guid: 9f84e9381f196754c936e30ed267f8b8, type: 3}
   tutorialEnemySpawner: {fileID: 3257338143918965372, guid: 1f66306ffbf7ab44d90a5b10d5f0f0b4, type: 3}
   rooms:
   - {fileID: 3871395411211202841, guid: 7df8a141ddea78c4e99601ee3c2251a3, type: 3}
@@ -2132,6 +2133,8 @@ MonoBehaviour:
   gameOver: 0
   playerDead: 0
   hardMode: 0
+  bossprefab: {fileID: 2642796827996226043, guid: 832013a6d4fc43b4ab37c16cc27b64db, type: 3}
+  floorsForBoss: 20
 --- !u!4 &1858073657
 Transform:
   m_ObjectHideFlags: 0

@@ -38,7 +38,7 @@ public class Bullet : MonoBehaviour
         if (col.gameObject.tag == "Player") {
             target.damage(this.damage);
         }
-        if (col.gameObject.tag != "Enemy" && col.gameObject.tag != "PlayerExit" && col.gameObject.tag != "Bullet") {
+        if (col.gameObject.tag != "Boss" && col.gameObject.tag != "Enemy" && col.gameObject.tag != "PlayerExit" && col.gameObject.tag != "Bullet") {
             Destroy(this.gameObject);
         }
     }
