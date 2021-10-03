@@ -112,7 +112,7 @@ public class GameManager : MonoBehaviour
 
     private void loadRoom()
     {
-        this.floorText.GetComponent<TMPro.TextMeshProUGUI>().text = "Floor: " + (this.floorsCleared + 1).ToString();
+        this.floorText.GetComponent<TMPro.TextMeshProUGUI>().text = "Floor: " + (this.floorsCleared + 1).ToString() + "/" + this.floorsForBoss.ToString();
         this.inTutorial = false;
         this.roomDone = false;
         this.player.enterRoom();
