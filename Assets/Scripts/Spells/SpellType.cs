@@ -1,0 +1,1 @@
+public enum SpellType {SELF, PROJECTILE, LOCATION, ENTITY};

@@ -3,12 +3,20 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - crosshair
+  - Enemy
+  - PlayerSpawn
+  - PlayerExit
+  - SpawnableTiles
+  - Room
+  - Spells
+  - Bullet
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Entities
   - Water
   - UI
   - 

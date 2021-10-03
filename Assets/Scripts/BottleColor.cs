@@ -1,0 +1,1 @@
+public enum BottleColor {Green, Blue, Yellow, Red};
