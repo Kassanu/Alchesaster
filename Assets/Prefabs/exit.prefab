@@ -207,6 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11dc3f4142abdea40b7cc19e9ec2d8be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bossExit: 1
   isActive: 0
   playerIsOn: 0
   light: {fileID: 8465443740865578844}

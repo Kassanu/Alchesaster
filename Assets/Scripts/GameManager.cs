@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
                 if (exit.isActive && exit.playerIsOn) {
                     if (exit.bossExit || this.floorsCleared > 30) {
                         this.gameOver = true;
-                        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+                        UnityEngine.SceneManagement.SceneManager.LoadScene(2);
                     }
                     this.unloadRoom();
                     if (!this.hardMode && (this.inTutorial && this.tutorialRoomIndex < this.tutorialRooms.Count - 1)) {
@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour
             if (this.player == null) {
                 this.gameOver = true;
                 this.playerDead = true;
-                UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+                UnityEngine.SceneManagement.SceneManager.LoadScene(2);
             }
         }
     }
