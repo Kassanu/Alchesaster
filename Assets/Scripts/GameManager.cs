@@ -26,7 +26,9 @@ public class GameManager : MonoBehaviour
     int spawnerIndex = 0;
     public bool hardMode = false;
     public Boss bossprefab;
-    public int floorsForBoss = 1;
+    public Boss hardBossprefab;
+    public int floorsForBoss = 20;
+    public GameObject floorText;
 
     private void Awake() {
         this.reset();
@@ -44,7 +46,6 @@ public class GameManager : MonoBehaviour
     private void Start() {
         this.player = GameObject.FindWithTag("Player").GetComponent<Player>();
         this.loadTutorialRoom();
-        // this.loadBossRoom();
     }
 
     private void Update() {
@@ -73,7 +74,7 @@ public class GameManager : MonoBehaviour
                     if (!this.hardMode && (this.inTutorial && this.tutorialRoomIndex < this.tutorialRooms.Count - 1)) {
                         this.tutorialRoomIndex++;
                         this.loadTutorialRoom();
-                    } else if (this.floorsForBoss >= this.floorsCleared) {
+                    } else if (this.floorsCleared >= this.floorsForBoss) {
                         this.loadBossRoom();
                     } else {
                         this.loadRoom();
@@ -111,6 +112,7 @@ public class GameManager : MonoBehaviour
 
     private void loadRoom()
     {
+        this.floorText.GetComponent<TMPro.TextMeshProUGUI>().text = "Floor: " + (this.floorsCleared + 1).ToString();
         this.inTutorial = false;
         this.roomDone = false;
         this.player.enterRoom();
@@ -155,13 +157,19 @@ public class GameManager : MonoBehaviour
 
     private void loadBossRoom()
     {
+        this.floorText.GetComponent<TMPro.TextMeshProUGUI>().text = "Boss";
         this.roomDone = false;
         this.player.enterRoom();
         this.loadedRoom = Instantiate(this.bossRoom, Vector3.zero, Quaternion.identity);
         GameObject spawnPoint = GameObject.FindWithTag("PlayerSpawn");
         this.exit = GameObject.FindWithTag("PlayerExit").GetComponent<Exit>();
         this.player.transform.position = spawnPoint.transform.position;
-        Boss boss = Instantiate(this.bossprefab);
-        boss.transform.parent = enemiesContainer.transform;
+        if (this.hardMode) {
+            Boss boss = Instantiate(this.hardBossprefab);
+            boss.transform.parent = enemiesContainer.transform;
+        } else {
+            Boss boss = Instantiate(this.bossprefab);
+            boss.transform.parent = enemiesContainer.transform;
+        }
     }
 }

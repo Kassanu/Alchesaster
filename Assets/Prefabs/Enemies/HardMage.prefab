@@ -17,7 +17,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 82019889078890256, guid: b0b645ee67aa4eb4fb1f06db67e1fa4a, type: 3}
       propertyPath: bulletDamage
-      value: 25
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 82019889078890256, guid: b0b645ee67aa4eb4fb1f06db67e1fa4a, type: 3}
       propertyPath: attackCooldown

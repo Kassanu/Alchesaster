@@ -12,7 +12,7 @@ public class Entity : MonoBehaviour
     public bool hasRunSpeedBuff = false;
     public float runSpeedPercentIncrase = 0f;
     public float runSpeedBuffTime = 0f;
-
+    public float wakeUp = 0f;
 
     [SerializeField]
     private int health = 100;
@@ -32,6 +32,7 @@ public class Entity : MonoBehaviour
     protected virtual void Start()
     {
         this.rigidBody2d = GetComponent<Rigidbody2D>();
+        this.wakeUp = Time.time + 0.5f;
     }
 
     protected virtual void Update()

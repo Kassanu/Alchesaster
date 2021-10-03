@@ -19,10 +19,12 @@ public class Enemy : Entity
     protected override void Update()
     {
         base.Update();
-        this.movement = this.player.transform.position - this.transform.position;
-        if (this.playerInRange()) {
-            if (Time.time > this.nextAttack) {
-                this.Attack();
+        if (Time.time > this.wakeUp) {
+            this.movement = this.player.transform.position - this.transform.position;
+            if (this.playerInRange()) {
+                if (Time.time > this.nextAttack) {
+                    this.Attack();
+                }
             }
         }
     }

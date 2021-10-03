@@ -110,7 +110,7 @@ MonoBehaviour:
     rgba: 4290981161
   bulletPrefab: {fileID: -7538933329110780130, guid: 63a02b77e4218bb44ad8bb3357a43175, type: 3}
   bulletSpeed: 60
-  bulletDamage: 10
+  bulletDamage: 5
 --- !u!1 &82019889905760147
 GameObject:
   m_ObjectHideFlags: 0

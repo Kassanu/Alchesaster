@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3545807141586023460}
   m_Layer: 3
   m_Name: RightArm
-  m_TagString: Untagged
+  m_TagString: BossArm
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -154,6 +154,36 @@ Transform:
   m_Father: {fileID: 4033038188275520640}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2436570899351989458
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7132307323530523815}
+  m_Layer: 3
+  m_Name: shotSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7132307323530523815
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2436570899351989458}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.11, y: -1.62, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4033038188275520640}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2532134391206899450
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,7 +228,7 @@ GameObject:
   - component: {fileID: 6131748903523521181}
   m_Layer: 3
   m_Name: LeftArm
-  m_TagString: Untagged
+  m_TagString: BossArm
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -488,11 +518,11 @@ MonoBehaviour:
   armAttacking: 0
   armWoundUp: 0
   armReturn: 0
-  armSpeed: 3
+  armSpeed: 10
   armWindupSpeed: 1
-  armRetractSpeed: 2
+  armRetractSpeed: 6
   armIndex: 0
-  armDamage: 20
+  armDamage: 10
   arms:
   - {fileID: 2847365076196644046}
   - {fileID: 1650001678307314999}
@@ -505,6 +535,14 @@ MonoBehaviour:
   armTargets:
   - {fileID: 7919583541837301212}
   - {fileID: 1445429708457755921}
+  shotPrefabs:
+  - {fileID: 8108727611375868654, guid: 6efe043d71189b0489f29c110ee20b6a, type: 3}
+  - {fileID: 8108727611375868654, guid: 67830b369d6029840bfcfb6e6757da89, type: 3}
+  shotSpawn: {fileID: 7132307323530523815}
+  lastAttack: 0
+  nextShot: 0
+  shotCooldown: 1
+  doubleShot: 0
 --- !u!1 &6601677693116546232
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,6 +579,7 @@ Transform:
   - {fileID: 7385619327723471781}
   - {fileID: 7919583541837301212}
   - {fileID: 1445429708457755921}
+  - {fileID: 7132307323530523815}
   m_Father: {fileID: 5913628093924903017}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
